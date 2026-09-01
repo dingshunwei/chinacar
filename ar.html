@@ -81,6 +81,7 @@
 <script>
   const brands = [
     {name:'BYD', zh:'比亚迪', badge:'BYD', lt:'c', bc:'#0d5aa8', grad:'linear-gradient(135deg,#084a8f,#1287d1)', car:'#2ba0e8'},
+    {name:'Hongqi', zh:'红旗', badge:'红旗', lt:'r', bc:'#c8102e', grad:'linear-gradient(135deg,#8f0b1c,#e0223a)', car:'#e83a4a', link:'https://sldiary.com/browse.html?d=21'},
     {name:'NIO', zh:'蔚来', badge:'NIO', lt:'a', bc:'#0b6fb0', grad:'linear-gradient(135deg,#085383,#1287d1)', car:'#2ba0e8'},
     {name:'Li Auto', zh:'理想', badge:'理想', lt:'r', bc:'#4399dd', grad:'linear-gradient(135deg,#2e78b8,#63b7f0)', car:'#7cc4f2'},
     {name:'XPeng', zh:'小鹏', badge:'XP', lt:'r', bc:'#2b3a55', grad:'linear-gradient(135deg,#1c2737,#3f5577)', car:'#7b9bd0'},
@@ -94,7 +95,6 @@
     {name:'Changan', zh:'长安', badge:'长安', lt:'r', bc:'#123c8c', grad:'linear-gradient(135deg,#0c2d6b,#1a52b4)', car:'#3b78d0'},
     {name:'Great Wall', zh:'长城', badge:'长城', lt:'r', bc:'#c8102e', grad:'linear-gradient(135deg,#8f0b1c,#e0223a)', car:'#ff3b50'},
     {name:'Voyah', zh:'岚图', badge:'岚图', lt:'r', bc:'#b5832f', grad:'linear-gradient(135deg,#8f6a1f,#d7a43a)', car:'#f0c34c'},
-    {name:'Hongqi', zh:'红旗', badge:'红旗', lt:'r', bc:'#c8102e', grad:'linear-gradient(135deg,#8f0b1c,#e0223a)', car:'#e83a4a'},
     {name:'Deepal', zh:'深蓝', badge:'D', lt:'r', bc:'#2f6f8f', grad:'linear-gradient(135deg,#1f4f68,#3f8fb5)', car:'#57a7cc'},
     {name:'Dongfeng', zh:'东风', badge:'东风', lt:'r', bc:'#c8102e', grad:'linear-gradient(135deg,#8f0b1c,#e0223a)', car:'#e8403f'},
   ];
@@ -126,6 +126,7 @@
     c.innerHTML=`<div class="logo">${logoSVG(b.lt,b.badge,b.bc)}<img src="https://logo.clearbit.com/${domains[b.name]||''}" alt="" onload="this.style.opacity=1" onerror="this.remove()"></div>
       <div class="name">${b.name}</div><div class="zh">${b.zh}</div>
       <div class="car">${carSVG(b.car)}</div>`;
+    if(b.link){ c.style.cursor="pointer"; c.onclick=function(){ location.href=b.link; }; }
     grid.appendChild(c);
   });
 </script>
