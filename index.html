@@ -1,57 +1,60 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>中国汽车品牌 · 网格</title>
+<title>China Auto Brands</title>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",Arial,sans-serif;background:#0f1115;color:#fff;-webkit-font-smoothing:antialiased;padding-bottom:40px}
-  .top{padding:22px 20px 6px;text-align:center}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:#0f1115;color:#fff;-webkit-font-smoothing:antialiased;padding-bottom:40px}
+  .top{position:relative;padding:22px 20px 6px;text-align:center}
   .top h1{font-size:22px;font-weight:800;letter-spacing:2px}
   .top .sub{font-size:12px;color:#838c9c;margin-top:5px;letter-spacing:1px}
+  .langbtn{position:absolute;top:20px;right:18px;padding:6px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#fff;font-size:12px;font-weight:600;text-decoration:none}
+  .langbtn:hover{background:rgba(255,255,255,.14)}
   .grid{max-width:960px;margin:22px auto 0;padding:0 16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
-  .card{position:relative;border-radius:20px;padding:22px 14px 18px;text-align:center;overflow:hidden;transition:transform .25s,box-shadow .25s;box-shadow:0 8px 22px rgba(0,0,0,.35)}
+  .card{position:relative;border-radius:20px;padding:22px 14px 16px;text-align:center;overflow:hidden;transition:transform .25s,box-shadow .25s;box-shadow:0 8px 22px rgba(0,0,0,.35)}
   .card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(0,0,0,.5)}
   .card::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 20%,rgba(255,255,255,.12),transparent 60%);pointer-events:none}
   .card .logo{width:64px;height:64px;margin:0 auto 12px;position:relative}
   .card .logo svg{width:100%;height:100%}
   .card .logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:3px;opacity:0;transition:opacity .3s}
-  .card .name{font-size:18px;font-weight:800;letter-spacing:.5px}
-  .card .en{font-size:11px;letter-spacing:2px;color:rgba(255,255,255,.85);margin-top:3px}
+  .card .name{font-size:19px;font-weight:800;letter-spacing:.5px}
+  .card .zh{font-size:12px;color:rgba(255,255,255,.78);margin-top:3px}
   .card .car{width:70%;max-width:120px;margin:10px auto 0;opacity:.9}
   .card .car svg{width:100%;height:auto}
-  @media(max-width:520px){.grid{grid-template-columns:repeat(2,1fr);gap:12px;padding:0 14px}.card{padding:18px 10px 14px}}
+  @media(max-width:520px){.grid{grid-template-columns:repeat(2,1fr);gap:12px;padding:0 14px}.card{padding:18px 10px 12px}}
 </style>
 </head>
 <body>
   <div class="top">
-    <h1>◈ 中国汽车品牌</h1>
-    <div class="sub">17 大品牌</div>
+    <h1>◈ China Auto Brands</h1>
+    <div class="sub">Browsing · Leading Chinese automotive brands</div>
+    <a class="langbtn" href="zh.html">中文</a>
   </div>
   <div class="grid" id="grid"></div>
 
 <script>
   const brands = [
-    {z:'比亚迪', en:'BYD', badge:'BYD', lt:'c', bc:'#0d5aa8', grad:'linear-gradient(135deg,#084a8f,#1287d1)', car:'#2ba0e8'},
-    {z:'蔚来', en:'NIO', badge:'NIO', lt:'a', bc:'#0b6fb0', grad:'linear-gradient(135deg,#085383,#1287d1)', car:'#2ba0e8'},
-    {z:'理想', en:'Li Auto', badge:'理想', lt:'r', bc:'#4399dd', grad:'linear-gradient(135deg,#2e78b8,#63b7f0)', car:'#7cc4f2'},
-    {z:'小鹏', en:'XPeng', badge:'XP', lt:'r', bc:'#2b3a55', grad:'linear-gradient(135deg,#1c2737,#3f5577)', car:'#7b9bd0'},
-    {z:'极氪', en:'Zeekr', badge:'Z', lt:'r', bc:'#14161a', grad:'linear-gradient(135deg,#0b0d11,#2b3038)', car:'#c9a227'},
-    {z:'小米', en:'Xiaomi SU7', badge:'MI', lt:'r', bc:'#ff6a1a', grad:'linear-gradient(135deg,#e04f0a,#ff8a3d)', car:'#ff8a3d'},
-    {z:'吉利', en:'Geely', badge:'G', lt:'r', bc:'#1c64c9', grad:'linear-gradient(135deg,#124eb0,#2b7ff0)', car:'#4a9bff'},
-    {z:'问界', en:'AITO', badge:'A', lt:'r', bc:'#c8102e', grad:'linear-gradient(135deg,#8f0b1c,#e0223a)', car:'#e8403f'},
-    {z:'阿维塔', en:'Avatr', badge:'A', lt:'r', bc:'#1a1e26', grad:'linear-gradient(135deg,#0e1116,#2c333f)', car:'#5a6b84'},
-    {z:'名爵', en:'MG', badge:'MG', lt:'o', bc:'#c8102e', grad:'linear-gradient(135deg,#9a0b22,#e0213f)', car:'#ff3b55'},
-    {z:'奇瑞', en:'Chery', badge:'C', lt:'c', bc:'#d2232a', grad:'linear-gradient(135deg,#a51a20,#e8403f)', car:'#ff4b4b'},
-    {z:'长安', en:'Changan', badge:'长安', lt:'r', bc:'#123c8c', grad:'linear-gradient(135deg,#0c2d6b,#1a52b4)', car:'#3b78d0'},
-    {z:'长城', en:'Great Wall', badge:'长城', lt:'r', bc:'#c8102e', grad:'linear-gradient(135deg,#8f0b1c,#e0223a)', car:'#ff3b50'},
-    {z:'岚图', en:'Voyah', badge:'岚图', lt:'r', bc:'#b5832f', grad:'linear-gradient(135deg,#8f6a1f,#d7a43a)', car:'#f0c34c'},
-    {z:'红旗', en:'Hongqi', badge:'红旗', lt:'r', bc:'#c8102e', grad:'linear-gradient(135deg,#8f0b1c,#e0223a)', car:'#e83a4a'},
-    {z:'深蓝', en:'Deepal', badge:'D', lt:'r', bc:'#2f6f8f', grad:'linear-gradient(135deg,#1f4f68,#3f8fb5)', car:'#57a7cc'},
-    {z:'东风', en:'Dongfeng', badge:'东风', lt:'r', bc:'#c8102e', grad:'linear-gradient(135deg,#8f0b1c,#e0223a)', car:'#e8403f'},
+    {name:'BYD', zh:'比亚迪', badge:'BYD', lt:'c', bc:'#0d5aa8', grad:'linear-gradient(135deg,#084a8f,#1287d1)', car:'#2ba0e8'},
+    {name:'NIO', zh:'蔚来', badge:'NIO', lt:'a', bc:'#0b6fb0', grad:'linear-gradient(135deg,#085383,#1287d1)', car:'#2ba0e8'},
+    {name:'Li Auto', zh:'理想', badge:'理想', lt:'r', bc:'#4399dd', grad:'linear-gradient(135deg,#2e78b8,#63b7f0)', car:'#7cc4f2'},
+    {name:'XPeng', zh:'小鹏', badge:'XP', lt:'r', bc:'#2b3a55', grad:'linear-gradient(135deg,#1c2737,#3f5577)', car:'#7b9bd0'},
+    {name:'Zeekr', zh:'极氪', badge:'Z', lt:'r', bc:'#14161a', grad:'linear-gradient(135deg,#0b0d11,#2b3038)', car:'#c9a227'},
+    {name:'Xiaomi SU7', zh:'小米', badge:'MI', lt:'r', bc:'#ff6a1a', grad:'linear-gradient(135deg,#e04f0a,#ff8a3d)', car:'#ff8a3d'},
+    {name:'Geely', zh:'吉利', badge:'G', lt:'r', bc:'#1c64c9', grad:'linear-gradient(135deg,#124eb0,#2b7ff0)', car:'#4a9bff'},
+    {name:'AITO', zh:'问界', badge:'A', lt:'r', bc:'#c8102e', grad:'linear-gradient(135deg,#8f0b1c,#e0223a)', car:'#e8403f'},
+    {name:'Avatr', zh:'阿维塔', badge:'A', lt:'r', bc:'#1a1e26', grad:'linear-gradient(135deg,#0e1116,#2c333f)', car:'#5a6b84'},
+    {name:'MG', zh:'名爵', badge:'MG', lt:'o', bc:'#c8102e', grad:'linear-gradient(135deg,#9a0b22,#e0213f)', car:'#ff3b55'},
+    {name:'Chery', zh:'奇瑞', badge:'C', lt:'c', bc:'#d2232a', grad:'linear-gradient(135deg,#a51a20,#e8403f)', car:'#ff4b4b'},
+    {name:'Changan', zh:'长安', badge:'长安', lt:'r', bc:'#123c8c', grad:'linear-gradient(135deg,#0c2d6b,#1a52b4)', car:'#3b78d0'},
+    {name:'GWM', zh:'长城', badge:'长城', lt:'r', bc:'#c8102e', grad:'linear-gradient(135deg,#8f0b1c,#e0223a)', car:'#ff3b50'},
+    {name:'Voyah', zh:'岚图', badge:'岚图', lt:'r', bc:'#b5832f', grad:'linear-gradient(135deg,#8f6a1f,#d7a43a)', car:'#f0c34c'},
+    {name:'Hongqi', zh:'红旗', badge:'红旗', lt:'r', bc:'#c8102e', grad:'linear-gradient(135deg,#8f0b1c,#e0223a)', car:'#e83a4a'},
+    {name:'Deepal', zh:'深蓝', badge:'D', lt:'r', bc:'#2f6f8f', grad:'linear-gradient(135deg,#1f4f68,#3f8fb5)', car:'#57a7cc'},
+    {name:'Dongfeng', zh:'东风', badge:'东风', lt:'r', bc:'#c8102e', grad:'linear-gradient(135deg,#8f0b1c,#e0223a)', car:'#e8403f'},
   ];
-  const domains = {'比亚迪':'byd.com','蔚来':'nio.com','理想':'lixiang.com','小鹏':'xpeng.com','极氪':'zeekrlife.com','小米':'xiaomiev.com','吉利':'geely.com','问界':'aito.com','阿维塔':'avatr.com','名爵':'mg.co.uk','奇瑞':'chery.com','长安':'changan.com.cn','长城':'gwm.com.cn','岚图':'voyah.com.cn','红旗':'faw.com.cn','深蓝':'deepal.com.cn','东风':'dfmc.com.cn'};
+  const domains = {'BYD':'byd.com','NIO':'nio.com','Li Auto':'lixiang.com','XPeng':'xpeng.com','Zeekr':'zeekrlife.com','Xiaomi SU7':'xiaomiev.com','Geely':'geely.com','AITO':'aito.com','Avatr':'avatr.com','MG':'mg.co.uk','Chery':'chery.com','Changan':'changan.com.cn','GWM':'gwm.com.cn','Voyah':'voyah.com.cn','Hongqi':'faw.com.cn','Deepal':'deepal.com.cn','Dongfeng':'dfmc.com.cn'};
 
   function logoSVG(lt, word, c){
     let shape='';
@@ -76,8 +79,8 @@
   const grid=document.getElementById('grid');
   brands.forEach(b=>{
     const c=document.createElement('div'); c.className='card'; c.style.background=b.grad;
-    c.innerHTML=`<div class="logo">${logoSVG(b.lt,b.badge,b.bc)}<img src="https://logo.clearbit.com/${domains[b.z]||''}" alt="" onload="this.style.opacity=1" onerror="this.remove()"></div>
-      <div class="name">${b.z}</div><div class="en">${b.en}</div>
+    c.innerHTML=`<div class="logo">${logoSVG(b.lt,b.badge,b.bc)}<img src="https://logo.clearbit.com/${domains[b.name]||''}" alt="" onload="this.style.opacity=1" onerror="this.remove()"></div>
+      <div class="name">${b.name}</div><div class="zh">${b.zh}</div>
       <div class="car">${carSVG(b.car)}</div>`;
     grid.appendChild(c);
   });
