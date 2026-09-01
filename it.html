@@ -67,9 +67,14 @@
   .dlbtn{display:inline-block;background:var(--o,#ff6a1a);color:#fff;text-decoration:none;padding:13px 26px;border-radius:999px;font-size:15px;font-weight:700;margin:6px 8px;transition:transform .2s,background .2s}
   .dlbtn:hover{transform:translateY(-2px)}
   .soon{display:inline-block;padding:13px 24px;border-radius:999px;font-size:15px;font-weight:600;color:#cfd6de;border:1px solid rgba(255,255,255,.25);margin:6px 8px;opacity:.85}
+  .topbar{display:block;text-align:center;padding:10px 16px;background:#1a2430;color:#9aa4b2;font-size:13px;text-decoration:none;letter-spacing:.5px}
+  .topbar span{color:#fff;font-weight:600;margin:0 4px}
+  .topbar:hover{background:#232f3d;color:#fff}
 </style>
 </head>
 <body>
+<a class="topbar" href="https://chinamobile.uk" target="_blank">◈ China Mobile · <span>chinamobile.uk</span> →</a>
+
   <div class="top">
     <h1>◈ China Auto Brands</h1>
     <div class="sub">I principali marchi automobilistici cinesi</div>
@@ -89,7 +94,7 @@
   const brands = [
     {name:'BYD', zh:'比亚迪', badge:'BYD', lt:'c', bc:'#0d5aa8', grad:'linear-gradient(135deg,#084a8f,#1287d1)', car:'#2ba0e8'},
     {name:'Hongqi', zh:'红旗', badge:'红旗', lt:'r', bc:'#c8102e', grad:'linear-gradient(135deg,#8f0b1c,#e0223a)', car:'#e83a4a', link:'https://sldiary.com/browse.html?d=21'},
-    {name:'NIO', zh:'蔚来', badge:'NIO', lt:'a', bc:'#0b6fb0', grad:'linear-gradient(135deg,#085383,#1287d1)', car:'#2ba0e8', link:"https://sldiary.com/browse.html?d=18"},
+    {name:'NIO', zh:'蔚来', badge:'NIO', lt:'a', bc:'#0b6fb0', grad:'linear-gradient(135deg,#085383,#1287d1)', car:'#2ba0e8'},
     {name:'Li Auto', zh:'理想', badge:'理想', lt:'r', bc:'#4399dd', grad:'linear-gradient(135deg,#2e78b8,#63b7f0)', car:'#7cc4f2'},
     {name:'XPeng', zh:'小鹏', badge:'XP', lt:'r', bc:'#2b3a55', grad:'linear-gradient(135deg,#1c2737,#3f5577)', car:'#7b9bd0'},
     {name:'Zeekr', zh:'极氪', badge:'Z', lt:'r', bc:'#14161a', grad:'linear-gradient(135deg,#0b0d11,#2b3038)', car:'#c9a227'},
