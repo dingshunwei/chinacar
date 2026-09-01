@@ -25,6 +25,13 @@
   .langbtn:hover{background:rgba(255,255,255,.14)}
   .top{position:relative}
   @media(max-width:520px){.grid{grid-template-columns:repeat(2,1fr);gap:12px;padding:0 14px}.card{padding:18px 10px 14px}}
+  .dl{max-width:960px;margin:26px auto 0;padding:0 16px;text-align:center}
+  .dlbox{background:linear-gradient(135deg,#1c2430,#2a3644);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:26px 18px;box-shadow:0 8px 22px rgba(0,0,0,.3)}
+  .dlbox h2{font-size:18px;font-weight:800;margin-bottom:6px;letter-spacing:.5px}
+  .dlbox p{font-size:12px;color:#9aa4b2;margin-bottom:16px}
+  .dlbtn{display:inline-block;background:#ff6a1a;color:#fff;text-decoration:none;padding:13px 26px;border-radius:999px;font-size:15px;font-weight:700;margin:6px 8px;transition:transform .2s,background .2s}
+  .dlbtn:hover{transform:translateY(-2px)}
+  .soon{display:inline-block;padding:13px 24px;border-radius:999px;font-size:15px;font-weight:600;color:#cfd6de;border:1px solid rgba(255,255,255,.25);margin:6px 8px;opacity:.85}
 </style>
 </head>
 <body>
@@ -34,6 +41,14 @@
     <a class="langbtn" href="index.html">English</a>
   </div>
   <div class="grid" id="grid"></div>
+  <div class="dl">
+    <div class="dlbox">
+      <h2>下载日记 App</h2>
+      <p>上海宁波 · 日记 — 记录双城的每一寸时光</p>
+      <a class="dlbtn" href="./diary-v1.0.0.apk">⬇ 下载安卓版 (APK)</a>
+      <span class="soon">iOS 即将上线</span>
+    </div>
+  </div>
 
 <script>
   const brands = [
