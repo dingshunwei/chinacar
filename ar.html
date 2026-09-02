@@ -22,6 +22,8 @@
 <meta name="twitter:description" content="BYD، NIO، Li Auto، XPeng، Zeekr والمزيد — أشهر علامات السيارات الصينية." />
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"علامات السيارات الصينية","url":"https://chinacar.bid/ar.html","description":"علامات السيارات الصينية"}
+
+  
 </script>
 <script type="application/ld+json">
 {
@@ -144,9 +146,10 @@
     c.innerHTML=`<div class="logo">${logoSVG(b.lt,b.badge,b.bc)}<img src="https://logo.clearbit.com/${domains[b.name]||''}" alt="" onload="this.style.opacity=1" onerror="this.remove()"></div>
       <div class="name">${b.name}</div><div class="zh">${b.zh}</div>
       <div class="car">${carSVG(b.car)}</div>`;
-    if(b.link){ c.style.cursor="pointer"; c.onclick=function(){ location.href=b.link; }; }
+    c.dataset.brand=b.name;
     grid.appendChild(c);
   });
+  function loadLinks(){fetch('https://elrsrrvvuhfbkmxnvtod.supabase.co/rest/v1/brand_links?select=brand_key,diary_id&site=eq.chinacar',{headers:{apikey:'sb_publishable_XuZtEeFeJK6GtQC1RE3O6A_ZoVMcaO6',Authorization:'Bearer sb_publishable_XuZtEeFeJK6GtQC1RE3O6A_ZoVMcaO6'}}).then(r=>r.json()).then(rows=>{var m={};rows.forEach(r=>m[r.brand_key]=r.diary_id);document.querySelectorAll('.card[data-brand]').forEach(c=>{var k=c.getAttribute('data-brand');if(m[k]){c.style.cursor='pointer';c.onclick=function(){location.href='https://sldiary.com/browse.html?d='+m[k]+'&lang=en';};}else{c.onclick=null;c.style.cursor='default';}});}).catch(function(){});}loadLinks();
 </script>
 
 <div class="help-modal" id="helpModal">
