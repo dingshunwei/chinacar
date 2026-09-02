@@ -46,7 +46,14 @@
   .top{position:relative;padding:22px 20px 6px;text-align:center}
   .top h1{font-size:22px;font-weight:800;letter-spacing:2px}
   .top .sub{font-size:12px;color:#838c9c;margin-top:5px;letter-spacing:1px}
-  .langbtn{position:absolute;top:20px;right:18px;padding:6px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#fff;font-size:12px;font-weight:600;text-decoration:none}
+  .langbtn{padding:6px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#fff;font-size:12px;font-weight:600;text-decoration:none;white-space:nowrap}
+.topright{position:absolute;top:18px;right:18px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end;}
+.cm{color:#cfd6de;text-decoration:none;font-size:12.5px;font-weight:700;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);white-space:nowrap;}
+.cm:hover{background:rgba(255,255,255,.14);color:#fff;}
+.cm span{color:#fff;}
+.hlp{background:#fff;color:#1a2430;border:none;padding:6px 16px;border-radius:999px;font-size:13px;font-weight:800;cursor:pointer;white-space:nowrap;}
+.hlp:hover{background:#d5dbe3;}
+
   .langbtn:hover{background:rgba(255,255,255,.14)}
   .grid{max-width:960px;margin:22px auto 0;padding:0 16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
   .card{position:relative;border-radius:20px;padding:22px 14px 16px;text-align:center;overflow:hidden;transition:transform .25s,box-shadow .25s;box-shadow:0 8px 22px rgba(0,0,0,.35)}
@@ -85,12 +92,10 @@
 </style>
 </head>
 <body>
-<a class="topbar" href="https://chinamobile.uk" target="_blank">◈ China Mobile · <span>chinamobile.uk</span> →</a>
-
   <div class="top">
     <h1>◈ China Auto Brands</h1>
     <div class="sub">중국의 주요 자동차 브랜드</div>
-    <a class="langbtn" href="index.html">English</a>
+    <div class="topright"><a class="cm" href="https://chinamobile.uk" target="_blank">◈ China Mobile <span>chinamobile.uk</span></a><button class="hlp" onclick="openHelp()">Help</button><a class="langbtn" href="index.html">English</a></div>
   </div>
   <div class="grid" id="grid"></div>
   <div class="dl">
@@ -155,7 +160,6 @@
   });
 </script>
 
-<button class="help-fab" onclick="openHelp()">Help</button>
 <div class="help-modal" id="helpModal">
   <div class="help-box">
     <button class="help-close" onclick="closeHelp()">&#10005;</button>
