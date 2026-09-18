@@ -80,7 +80,16 @@
 
 .top .cml{position:absolute;top:20px;left:18px;color:#fff;text-decoration:none;font-size:12.5px;font-weight:700;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.16);}
 .top .cml:hover{color:#fff;background:rgba(255,255,255,.28);}
+.qa{max-width:960px;margin:26px auto 0;padding:0 16px;}
+.qa h2{font-size:18px;font-weight:800;margin-bottom:6px;letter-spacing:.5px}
+.qa>.lead{font-size:13.5px;color:#6b7280;margin-bottom:12px;line-height:1.7}
+.qa details{background:#fff;border:1px solid #e7e9f2;border-radius:14px;padding:12px 15px;margin-bottom:8px}
+.qa details summary{cursor:pointer;font-weight:700;font-size:14px}
+.qa details p,.qa details ul{font-size:13px;color:#444;line-height:1.75;margin-top:8px}
+.qa details ul{padding-left:18px}
+.qa details li{margin-bottom:5px}
 </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "ar", "mainEntity": [{"@type": "Question", "name": "هل تعمل هذه السيارات خارج الصين؟", "acceptedAnswer": {"@type": "Answer", "text": "نسخ التصدير معتمدة عادةً لأسواق أخرى مع معايير الشحن والخدمات المتصلة، أما النسخ الصينية فقد تختلف في البرمجيات والتجهيز. تحقّق من النسخة قبل الشراء."}}, {"@type": "Question", "name": "أين أشاهد الفيديوهات؟", "acceptedAnswer": {"@type": "Answer", "text": "لكل طراز صفحة خاصة بالفيديو، والتطبيق يعرض المحتوى نفسه على الهاتف."}}]}</script>
 </head>
 <body>
   <div class="top"><a class="cml" href="https://chinamobile.uk/ar/" target="_blank">◈ هواتف الصين</a>
@@ -125,8 +134,10 @@
 fetch(SB+'/brands?select=name,zh,tag,color,icon,lt,grad,car&site=eq.chinacar&order=ord.asc',{headers:{apikey:KEY,Authorization:'Bearer '+KEY}})
 .then(r=>r.json()).then(brands=>{
 const grid=document.getElementById('grid');
+function _cs(s){return String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');}
+var _L=(document.documentElement.getAttribute('lang')||'en').slice(0,2);var _P=(_L==='en')?'':_L+'/';
 brands.forEach(b=>{
-const c=document.createElement('div'); c.className='card'; c.style.background=b.grad;
+const c=document.createElement('div'); c.className='card'; c.style.background=b.grad; c.style.cursor='pointer'; c.onclick=function(){location.href='/'+_P+'brand/'+_cs(b.name)+'.html';};
 c.innerHTML=`<div class="logo">${logoSVG(b.lt,b.icon,b.color)}<img src="https://logo.clearbit.com/${domains[b.name]||''}" alt="" onload="this.style.opacity=1" onerror="this.remove()"></div>
 <div class="name">${b.name}</div><div class="zh">${b.zh}</div>
 <div class="car">${carSVG(b.car)}</div>`;
@@ -136,11 +147,39 @@ grid.appendChild(c);
 fetch(SB+'/brand_links?select=brand_key,diary_id&site=eq.chinacar',{headers:{apikey:KEY,Authorization:'Bearer '+KEY}})
 .then(r=>r.json()).then(rows=>{var m={};rows.forEach(r=>m[r.brand_key]=r.diary_id);
 document.querySelectorAll('.card[data-brand]').forEach(c=>{var k=c.getAttribute('data-brand');
-if(m[k]){c.style.cursor='pointer';c.onclick=function(){location.href='https://sldiary.com/browse.html?d='+m[k]+'&lang=en';};}
-else{c.onclick=null;c.style.cursor='default';}});}).catch(()=>{});
+if(m[k]){var _d=document.createElement('div');_d.innerHTML='<a href="https://sldiary.com/browse.html?d='+m[k]+'&lang='+_L+'" style="display:inline-block;margin-top:8px;font-size:12px;color:#fff;opacity:.93;text-decoration:none;background:rgba(0,0,0,.18);padding:4px 10px;border-radius:999px">\u25b6 '+(_L==='zh'?'\u770b\u89c6\u9891':'Watch video')+'</a>';var _a=_d.firstChild;_a.onclick=function(e){e.stopPropagation();};c.appendChild(_a);}
+});}).catch(()=>{});
 }).catch(()=>{});
 </script>
 
+<section class="qa">
+    <h2>العلامات الصينية للسيارات في صفحة واحدة</h2>
+    <p class="lead">تغطي العلامات الصينية اليوم معظم الأسعار وأنواع الهياكل: سيارات كهربائية اقتصادية، ودفع رباعي عائلية، وفئات فاخرة وسيارات أداء. في الأسفل ملاحظات قصيرة لكل علامة والأسئلة الشائعة — اضغط للفتح.</p>
+    <details><summary>لمحة عن العلامات</summary>
+      <ul>
+      <li><b>BYD</b></li>
+      <li><b>Hongqi</b></li>
+      <li><b>NIO</b></li>
+      <li><b>Li Auto</b></li>
+      <li><b>XPeng</b></li>
+      <li><b>Zeekr</b></li>
+      <li><b>Xiaomi SU7</b></li>
+      <li><b>Geely</b></li>
+      <li><b>AITO</b></li>
+      <li><b>Avatr</b></li>
+      <li><b>MG</b></li>
+      <li><b>Chery</b></li>
+      <li><b>Changan</b></li>
+      <li><b>GWM</b></li>
+      <li><b>Voyah</b></li>
+      <li><b>Deepal</b></li>
+      <li><b>Dongfeng</b></li>
+      </ul>
+    </details>
+    <details><summary>ماذا يعني «مصنوع في الصين» هنا</summary><p>«سيارات مصنوعة في الصين» تعني هنا مركبات من علامات صينية — BYD وHongqi وNIO وLi Auto وXPeng وZeekr وXiaomi SU7 وGeely وAITO وAvatr وMG وChery وChangan وGWM وVoyah وDeepal وDongfeng. لكثير من الطُرز نسخة صينية ونسخة تصدير: نسخة التصدير تأتي عادةً بمعايير الشحن والخدمات المتصلة المناسبة، أما النسخة الصينية فقد تختلف في البرمجيات والتجهيز.</p></details>
+    <details><summary>هل تعمل هذه السيارات خارج الصين؟</summary><p>نسخ التصدير معتمدة عادةً لأسواق أخرى مع معايير الشحن والخدمات المتصلة، أما النسخ الصينية فقد تختلف في البرمجيات والتجهيز. تحقّق من النسخة قبل الشراء.</p></details>
+    <details><summary>أين أشاهد الفيديوهات؟</summary><p>لكل طراز صفحة خاصة بالفيديو، والتطبيق يعرض المحتوى نفسه على الهاتف.</p></details>
+  </section>
 <div class="help-modal" id="helpModal">
   <div class="help-box">
     <button class="help-close" onclick="closeHelp()">&#10005;</button>
