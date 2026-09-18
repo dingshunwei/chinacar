@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://chinacar.bid/sitemap.xml
+Sitemap: https://www.chinacar.bid/sitemap.xml

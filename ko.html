@@ -7,16 +7,16 @@
 <meta name="description" content="중국 제조 자동차를 발견하세요 — BYD, NIO, Li Auto, XPeng, Zeekr, Geely, AITO, MG, Chery." />
 <meta name="keywords" content="중국 제조 자동차, 중국 자동차 브랜드, BYD, NIO, Li Auto, XPeng, Zeekr" />
 <meta name="robots" content="index,follow" />
-<link rel="canonical" href="https://chinacar.bid/ko.html" />
-<link rel="alternate" hreflang="en" href="https://chinacar.bid/" />
-<link rel="alternate" hreflang="zh" href="https://chinacar.bid/zh.html" />
-<link rel="alternate" hreflang="ar" href="https://chinacar.bid/ar.html" />
-<link rel="alternate" hreflang="ko" href="https://chinacar.bid/ko.html" />
-<link rel="alternate" hreflang="x-default" href="https://chinacar.bid/" />
+<link rel="canonical" href="https://www.chinacar.bid/ko.html" />
+<link rel="alternate" hreflang="en" href="https://www.chinacar.bid/" />
+<link rel="alternate" hreflang="zh" href="https://www.chinacar.bid/zh.html" />
+<link rel="alternate" hreflang="ar" href="https://www.chinacar.bid/ar.html" />
+<link rel="alternate" hreflang="ko" href="https://www.chinacar.bid/ko.html" />
+<link rel="alternate" hreflang="x-default" href="https://www.chinacar.bid/" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="중국 제조 자동차 | 중국 자동차 브랜드 TOP" />
 <meta property="og:description" content="중국 제조 자동차를 발견하세요 — BYD, NIO, Li Auto, XPeng, Zeekr, Geely, AITO, MG, Chery." />
-<meta property="og:url" content="https://chinacar.bid/" />
+<meta property="og:url" content="https://www.chinacar.bid/" />
 <meta property="og:site_name" content="China Auto Brands" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="중국 제조 자동차 | 중국 자동차 브랜드 TOP" />
@@ -26,7 +26,7 @@
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "China Auto Brands",
-  "url": "https://chinacar.bid/",
+  "url": "https://www.chinacar.bid/",
   "description": "China Auto Brands — top Chinese car brands showcase"
 }
 
@@ -107,8 +107,8 @@
     <div class="dlbox">
       <h2>다이어리 앱 다운로드</h2>
       <p>상하이 · 닝보 일기 — 모든 순간을 기록</p>
-      <a class="dlbtn" href="./diary-v1.0.0.apk">⬇ Android 다운로드 (APK)</a>
-      <a class="dlbtn" href="https://testflight.apple.com/join/vzx6npWm" target="_blank">🍎 iOS · TestFlight</a>
+      <a class="dlbtn" href="https://ujnvwdjrlijzzmzxwwxk.supabase.co/storage/v1/object/public/lsdiary/diary-customer-car.apk">⬇ Android 다운로드 (APK)</a>
+      <a class="dlbtn" href="https://apps.apple.com/app/mobile-china/id6807377172" target="_blank">🍎 App Store</a><a class="dlbtn" href="https://testflight.apple.com/join/vzx6npWm" target="_blank">🍎 iOS · TestFlight</a>
     </div>
   </div>
 
@@ -162,8 +162,8 @@ else{c.onclick=null;c.style.cursor='default';}});}).catch(()=>{});
     <form id="helpForm" onsubmit="sendHelp(event);return false;">
       <input type="hidden" name="_subject" value="Help - chinacar.bid">
       <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="name" placeholder="Name (optional)">
-      <input type="email" name="email" placeholder="Email (optional)">
+      <input type="text" name="name" placeholder="Name *">
+      <input type="email" name="email" placeholder="Email *">
       <textarea name="message" required placeholder="How can I help?"></textarea>
       <button class="hsend" type="submit">Send</button>
     </form>
@@ -173,8 +173,9 @@ else{c.onclick=null;c.style.cursor='default';}});}).catch(()=>{});
 <script>
 function openHelp(){document.getElementById('helpModal').style.display='flex';}
 function closeHelp(){document.getElementById('helpModal').style.display='none';}
-async function sendHelp(e){e.preventDefault();var f=document.getElementById('helpForm');var btn=f.querySelector('.hsend');btn.textContent='Sending\u2026';var name=(f.name?f.name.value:'').trim();var em=(f.email?f.email.value:'').trim();var msg=(f.message?f.message.value:'').trim();if(!msg){btn.textContent='Send';alert('Please enter a message.');return;}var txt='\uD83D\uDCAC Help \u2014 '+new Date().toLocaleString()+'\nName: '+name+'\nEmail: '+em+'\nMessage: '+msg;try{var r=await fetch('https://elrsrrvvuhfbkmxnvtod.supabase.co/rest/v1/messages',{method:'POST',headers:{apikey:'sb_publishable_XuZtEeFeJK6GtQC1RE3O6A_ZoVMcaO6',Authorization:'Bearer sb_publishable_XuZtEeFeJK6GtQC1RE3O6A_ZoVMcaO6','Content-Type':'application/json',Prefer:'return=minimal'},body:JSON.stringify({device_id:'web-help',text:txt})});if(!r.ok)throw new Error(r.status);document.getElementById('helpForm').style.display='none';document.getElementById('helpDone').style.display='block';}catch(err){btn.textContent='Send';alert('Failed to send. Please try again.');}}
+async function sendHelp(e){e.preventDefault();var f=document.getElementById('helpForm');var btn=f.querySelector('.hsend');btn.textContent='Sending\u2026';var name=(f.name?f.name.value:'').trim();var em=(f.email?f.email.value:'').trim();var msg=(f.message?f.message.value:'').trim();if(!msg){btn.textContent='Send';alert('Please enter a message.');return;}var _nm=document.getElementById('mn')||document.querySelector('input[type=text][name=name]')||document.querySelector('input[type=text]');var _em=document.getElementById('me')||document.querySelector('input[type=email]');if(_nm&&!_nm.value.trim()){btn.textContent='Send';alert('Please enter your name.');_nm.focus();return;}if(_em&&!_em.value.trim()){btn.textContent='Send';alert('Please enter your email.');_em.focus();return;}var txt='\uD83D\uDCAC Help \u2014 '+new Date().toLocaleString()+'\nName: '+name+'\nEmail: '+em+'\nMessage: '+msg;try{var r=await fetch('https://elrsrrvvuhfbkmxnvtod.supabase.co/rest/v1/messages',{method:'POST',headers:{apikey:'sb_publishable_XuZtEeFeJK6GtQC1RE3O6A_ZoVMcaO6',Authorization:'Bearer sb_publishable_XuZtEeFeJK6GtQC1RE3O6A_ZoVMcaO6','Content-Type':'application/json',Prefer:'return=minimal'},body:JSON.stringify({device_id:'website:chinacar.bid',text:txt})});if(!r.ok)throw new Error(r.status);document.getElementById('helpForm').style.display='none';document.getElementById('helpDone').style.display='block';}catch(err){btn.textContent='Send';alert('Failed to send. Please try again.');}}
 </script>
 
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "157129c45a374d5c80fd142a8149fe68"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
